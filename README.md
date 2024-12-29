@@ -88,12 +88,12 @@ Start vnc server by typing ``` vncserver -localhost no :<number> ``` replace `<n
 Once the VNC server is started, you should get the following output:
 
 ```bash
-New 'ubuntu2004:1 (tariq)' desktop at :1 on machine ubuntu2004
+New 'ubuntu2004:1 (ubuntu)' desktop at :1 on machine ubuntu2004
 
 Starting applications specified in /etc/X11/Xvnc-session
-Log file is /home/tariq/.vnc/ubuntu2004:1.log
+Log file is /home/ubuntu/.vnc/ubuntu2004:1.log
 
-Use xtigervncviewer -SecurityTypes VncAuth,TLSVnc -passwd /home/tariq/.vnc/passwd ubuntu2004:1 to connect to the VNC server.
+Use xtigervncviewer -SecurityTypes VncAuth,TLSVnc -passwd /home/ubuntu/.vnc/passwd ubuntu2004:1 to connect to the VNC server.
 ```
 
 You can verify your running VNC server using the following command:
@@ -161,15 +161,14 @@ Add the following lines and make sure to replace `root` with your user name:
 ```bash
 [Service]
 Type=forking
-User=root
-Group=root
-WorkingDirectory=/root
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu
 
-PIDFile=/root/.vnc/%H:%i.pid
+PIDFile=/home/ubuntu/.vnc/%H:%i.pid
 ExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1
 ExecStart=/usr/bin/vncserver -depth 24 -geometry 1360x768 -localhost :%i
 ExecStop=/usr/bin/vncserver -kill :%i
-
 
 [Install]
 WantedBy=multi-user.target
