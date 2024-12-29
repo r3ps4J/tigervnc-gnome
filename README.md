@@ -150,7 +150,9 @@ EOF
 vncserver -kill $DISPLAY
 ```
 
-Then give it executable permission ```sudo chmod u+x /etc/vnc/xstartup```
+Then give it executable permission ```sudo chmod u+x /etc/vnc/xstartup```.
+
+You may need to give everyone executable permission if your user is not root: `sudo chmod +x /etc/vnc/xstartup`.
 
 Next, you will need to create a systemd file for TigerVNC to manage the VNC service. You can create it with the following command:
 
