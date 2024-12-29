@@ -167,7 +167,7 @@ User=ubuntu
 Group=ubuntu
 WorkingDirectory=/home/ubuntu
 
-PIDFile=/home/ubuntu/.vnc/%H:%i.pid
+PIDFile=/home/ubuntu/.vnc/%H:590%i.pid
 ExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1
 ExecStart=/usr/bin/vncserver -depth 24 -geometry 1360x768 -localhost :%i
 ExecStop=/usr/bin/vncserver -kill :%i
