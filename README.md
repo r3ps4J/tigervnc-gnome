@@ -27,6 +27,8 @@ apt update -y && apt upgrade -y
 
 ## Step 2 - Install Task Select & Gnome
 
+*Note: if you don't want to instal tasksel skip to the bottom of this step to manually install `ubuntu-desktop`.*
+
 Task Select will allow you to download and install ubuntu modules without affecting your system, install the Tasksel utility to install a desktop environment:
 
 ```bash
@@ -44,6 +46,8 @@ You should see the following interface:
 ![image](https://user-images.githubusercontent.com/11979856/124403138-1d544800-dd35-11eb-8664-64ed357badf7.png)
 
 Use the arrow key to scroll down the list and find **Ubuntu desktop**. Next, press the `SPACE` key to select it then press the `TAB` key to select OK then hit Enter to install the Ubuntu desktop (Gnome).
+
+If you don't see that option or do not want to install tasksel, you can manually install the `ubuntu-desktop` package using apt: `sudo apt install ubuntu-desktop`
 
 Once it finished you need to target your system to boot the graphical interface each time your server reboots:
 
